@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ACCESS] Private Club — Catálogo Óculos de Sol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Geist+Mono:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Geist Mono', monospace;
+      background: #0a0a0a;
+      color: #f5f0e8;
+      overflow-x: hidden;
+    }
+
+    /* ══ BLOCO 01 — BANNER ══ */
+    .bloco-01 img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ══ FAIXA LOGOS ANIMADA ══ */
+    .faixa-marcas {
+      background: #0a0a0a;
+      padding: 18px 0;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .faixa-track {
+      display: flex;
+      gap: 60px;
+      animation: scroll-marcas 28s linear infinite;
+      width: max-content;
+    }
+
+    .faixa-marcas:hover .faixa-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-marcas {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marca-logo         { height: 30px; max-width: 110px; opacity: 0.55; filter: brightness(10); object-fit: contain; }
+    .marca-logo.tall    { height: 28px; max-width: 60px; }
+    .marca-logo.wide    { height: 16px; max-width: 150px; }
+    .marca-logo.small   { height: 24px; max-width: 36px; }
+    .marca-logo.square  { height: 28px; max-width: 42px; }
+
+    /* ══ BLOCOS PNG ══ */
+    .bloco-png img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ══ BLOCO 05 — ANIMAÇÃO ══ */
+    .bloco-animacao {
+      background: #0a0a0a;
+      width: 100%;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 360px;
+    }
+
+    .animacao-inner {
+      font-family: 'Geist Mono', monospace;
+      color: #f5f0e8;
+      text-align: left;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .anim-status {
+      font-size: clamp(11px, 1.5vw, 14px);
+      letter-spacing: 0.15em;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .anim-line1 {
+      font-size: clamp(13px, 2vw, 18px);
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      opacity: 0;
+    }
+
+    .anim-line2 {
+      font-size: clamp(13px, 2vw, 18px);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      opacity: 0;
+      color: #888;
+    }
+
+    .anim-access {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(40px, 8vw, 90px);
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      opacity: 0;
+      line-height: 1;
+    }
+
+    .anim-granted {
+      font-size: clamp(18px, 3vw, 32px);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #f5f0e8;
+      opacity: 0;
+    }
+
+    .anim-cursor {
+      display: inline-block;
+      width: 10px;
+      height: clamp(18px, 3vw, 28px);
+      background: #f5f0e8;
+      margin-left: 4px;
+      opacity: 0;
+      vertical-align: middle;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ══ BLOCO 06 — BOTÕES PDF ══ */
+    .bloco-botoes {
+      background: #0a0a0a;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .botoes-titulo {
+      font-size: clamp(11px, 1.2vw, 14px);
+      letter-spacing: 0.2em;
+      color: #666;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .btn-pdf {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #f5f0e8;
+      color: #0a0a0a;
+      font-family: 'Geist Mono', monospace;
+      font-weight: 700;
+      font-size: clamp(14px, 1.8vw, 20px);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 20px 60px;
+      border: 2px solid #f5f0e8;
+      transition: all 0.2s ease;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .btn-pdf:hover {
+      background: transparent;
+      color: #f5f0e8;
+    }
+
+    /* ══ BLOCO 07 — RODAPÉ ══ */
+    .bloco-07 img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ══ MOBILE ══ */
+    @media (max-width: 768px) {
+      .bloco-animacao {
+        padding: 60px 24px;
+        min-height: 280px;
+      }
+
+      .bloco-botoes {
+        padding: 40px 20px;
+      }
+
+      .btn-pdf {
+        padding: 18px 24px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BLOCO 01 — BANNER -->
+  <section class="bloco-01">
+    <img src="BLOCO_ACESS_LUXURY_IS_NOT_UNREACHABLE.png" alt="[ACCESS] Private Club" />
+  </section>
+
+  <!-- FAIXA LOGOS ANIMADA -->
+  <div class="faixa-marcas">
+    <div class="faixa-track">
+      <img src="LACOSTE.png"  class="marca-logo small"  alt="Lacoste" />
+      <img src="DOLCE.png"    class="marca-logo wide"   alt="Dolce & Gabbana" />
+      <img src="DIOR.png"     class="marca-logo tall"   alt="Dior" />
+      <img src="VERSACE.png"  class="marca-logo square" alt="Versace" />
+      <img src="PRADA.png"    class="marca-logo wide"   alt="Prada" />
+      <img src="CHANEL.png"   class="marca-logo tall"   alt="Chanel" />
+      <img src="LOUIS_V.png"  class="marca-logo square" alt="Louis Vuitton" />
+      <img src="GUCCI.png"    class="marca-logo tall"   alt="Gucci" />
+      <img src="BALMAIN.png"  class="marca-logo tall"   alt="Balmain" />
+      <!-- duplicado para loop contínuo -->
+      <img src="LACOSTE.png"  class="marca-logo small"  alt="Lacoste" />
+      <img src="DOLCE.png"    class="marca-logo wide"   alt="Dolce & Gabbana" />
+      <img src="DIOR.png"     class="marca-logo tall"   alt="Dior" />
+      <img src="VERSACE.png"  class="marca-logo square" alt="Versace" />
+      <img src="PRADA.png"    class="marca-logo wide"   alt="Prada" />
+      <img src="CHANEL.png"   class="marca-logo tall"   alt="Chanel" />
+      <img src="LOUIS_V.png"  class="marca-logo square" alt="Louis Vuitton" />
+      <img src="GUCCI.png"    class="marca-logo tall"   alt="Gucci" />
+      <img src="BALMAIN.png"  class="marca-logo tall"   alt="Balmain" />
+    </div>
+  </div>
+
+  <!-- BLOCO 02 — ICONS OF STYLE -->
+  <section class="bloco-png">
+    <img src="BLOCO_Icons_of_Style_.png" alt="Icons of Style. Symbols of Luxury." />
+  </section>
+
+  <!-- BLOCO 03 — INSIDE THE ACCESS -->
+  <section class="bloco-png">
+    <img src="BLOCO_INSIDE_THE_ACCESS_CHANGES_EVERYTHING.png" alt="Inside the Access — Changes Everything" />
+  </section>
+
+  <!-- BLOCO 04 — EXPLORE O CATÁLOGO -->
+  <section class="bloco-png">
+    <img src="BLOCO_04_CATALOGO.png" alt="Explore o Catálogo" />
+  </section>
+
+  <!-- BLOCO 05 — ANIMAÇÃO ACCESS GRANTED -->
+  <section class="bloco-animacao">
+    <div class="animacao-inner">
+      <div class="anim-status">ACCESS STATUS:</div>
+      <div class="anim-line1" id="anim-line1">Checking...</div>
+      <div class="anim-line2" id="anim-line2">Checking <span id="anim-arrows"></span></div>
+      <div class="anim-access" id="anim-access">[ ACCESS ]</div>
+      <div class="anim-granted" id="anim-granted">GRANTED!</div>
+      <div class="anim-cursor" id="anim-cursor"></div>
+    </div>
+  </section>
+
+  <!-- BLOCO 06 — BOTÕES PDF -->
+  <section class="bloco-botoes">
+    <p class="botoes-titulo">ENTER THE [ACCESS] CLUB</p>
+    <a href="catalogo-access.pdf" target="_blank" class="btn-pdf">↗ &nbsp;Abrir em Nova Aba</a>
+    <a href="catalogo-access.pdf" download class="btn-pdf">↓ &nbsp;Baixar PDF</a>
+  </section>
+
+  <!-- BLOCO 07 — RODAPÉ -->
+  <section class="bloco-07">
+    <img src="BLOCO_07_RODAPE.png" alt="[ACCESS] Private Club" />
+  </section>
+
+  <script>
+    // ── ANIMAÇÃO ACCESS GRANTED ──
+    (function() {
+      const line1   = document.getElementById('anim-line1');
+      const line2   = document.getElementById('anim-line2');
+      const access  = document.getElementById('anim-access');
+      const granted = document.getElementById('anim-granted');
+      const arrows  = document.getElementById('anim-arrows');
+      const cursor  = document.getElementById('anim-cursor');
+
+      function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+      async function animate() {
+        line1.style.opacity   = '0';
+        line2.style.opacity   = '0';
+        access.style.opacity  = '0';
+        granted.style.opacity = '0';
+        arrows.textContent    = '';
+
+        await delay(400);
+        cursor.style.opacity    = '1';
+        cursor.style.animation  = 'blink 0.7s step-end infinite';
+
+        await delay(300);
+        line1.style.transition = 'opacity 0.3s';
+        line1.style.opacity    = '1';
+
+        await delay(700);
+        line2.style.transition = 'opacity 0.3s';
+        line2.style.opacity    = '1';
+
+        let count = 0;
+        await new Promise(resolve => {
+          const iv = setInterval(() => {
+            count++;
+            arrows.textContent = '>'.repeat(count);
+            if (count >= 28) { clearInterval(iv); resolve(); }
+          }, 55);
+        });
+
+        await delay(300);
+        line1.style.transition = 'opacity 0.2s';
+        line1.style.opacity    = '0';
+        line2.style.transition = 'opacity 0.2s';
+        line2.style.opacity    = '0';
+
+        await delay(400);
+        access.style.transition = 'opacity 0.5s';
+        access.style.opacity    = '1';
+
+        await delay(500);
+        granted.style.transition = 'opacity 0.5s';
+        granted.style.opacity    = '1';
+        cursor.style.opacity     = '0';
+
+        await delay(3200);
+        access.style.transition  = 'opacity 0.5s';
+        access.style.opacity     = '0';
+        granted.style.transition = 'opacity 0.5s';
+        granted.style.opacity    = '0';
+
+        await delay(600);
+        animate();
+      }
+
+      animate();
+    })();
+  </script>
+
+</body>
+</html>
